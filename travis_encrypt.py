@@ -28,8 +28,7 @@ __version__ = '1.0.0'
 
 
 def handle_args():
-    desc = ('Foo')
-    parser = argparse.ArgumentParser(description=desc)
+    parser = argparse.ArgumentParser()
     parser.add_argument('--version', action='version',
                         version=__version__)
 
