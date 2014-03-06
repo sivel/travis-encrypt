@@ -30,22 +30,36 @@ import (
 	"path"
 )
 
+var version string = "1.0.0"
+
 type Key struct {
 	Key string
 }
 
 func usage() {
 	fmt.Printf(`usage: %s --repo=owner/name string
+    -h, --help            Show this help message and exit
+    --version             Show program's version number and exit
     --repo REPO           Repository slug (:owner/:name)
     string                String to encrypt
 `, path.Base(os.Args[0]))
 }
 
+func printVersion() {
+	fmt.Println(version)
+}
+
 func main() {
 	flag.Usage = usage
 	var repo string
+	var ver bool
 	flag.StringVar(&repo, "repo", "", "Repository slug (:owner/:name)")
+	flag.BoolVar(&ver, "version", true, "Show program's version number and exit")
 	flag.Parse()
+	if ver {
+		printVersion()
+		os.Exit(0)
+	}
 	if repo == "" {
 		fmt.Println("ERROR: No --repo provided\n")
 		usage()
