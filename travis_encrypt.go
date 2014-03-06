@@ -16,18 +16,18 @@
 package main
 
 import (
-	"os"
-	"fmt"
-	"flag"
-	"path"
-	"net/http"
-	"io/ioutil"
-	"crypto/rsa"
 	"crypto/rand"
+	"crypto/rsa"
 	"crypto/x509"
-	"encoding/pem"
-	"encoding/json"
 	"encoding/base64"
+	"encoding/json"
+	"encoding/pem"
+	"flag"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"os"
+	"path"
 )
 
 type Key struct {
