@@ -1,5 +1,12 @@
 *.py[cod]
 
+# Backup files
+*~
+*.bak
+
+# Python egg-info
+*.egg-info
+
 # C extensions
 *.so
 
