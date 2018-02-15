@@ -54,7 +54,7 @@ func main() {
 	var repo string
 	var ver bool
 	flag.StringVar(&repo, "repo", "", "Repository slug (:owner/:name)")
-	flag.BoolVar(&ver, "version", true, "Show program's version number and exit")
+	flag.BoolVar(&ver, "version", false, "Show program's version number and exit")
 	flag.Parse()
 	if ver {
 		printVersion()
